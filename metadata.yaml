@@ -1,0 +1,26 @@
+name: udm-operator
+display-name: 5G UDM operator
+summary: 5G UDM operator
+description: 5G UDM operator
+
+containers:
+  udm:
+    resource: udm-image
+    mounts:
+      - storage: udm-volume
+        location: /etc/udm/
+
+resources:
+  udm-image:
+    type: oci-image
+    description: OCI image for 5G udm
+    upstream-source: omecproject/5gc-udm:master-6956659
+
+storage:
+  udm-volume:
+    type: filesystem
+    minimum-size: 1M
+
+requires:
+  nrf:
+    interface: nrf
