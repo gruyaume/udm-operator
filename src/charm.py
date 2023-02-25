@@ -127,7 +127,7 @@ class UDMOperatorCharm(CharmBase):
                     "udm": {
                         "override": "replace",
                         "startup": "enabled",
-                        "command": f"./udm --udmcfg {BASE_CONFIG_PATH}/{CONFIG_FILE_NAME}",
+                        "command": f"/free5gc/udm/udm --udmcfg {BASE_CONFIG_PATH}/{CONFIG_FILE_NAME}",
                         "environment": self._environment_variables,
                     },
                 },
